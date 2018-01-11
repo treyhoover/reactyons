@@ -1,4 +1,4 @@
-# React Tachyons
+# Reactyons
 
 ```
 yarn add reactyons tachyons
