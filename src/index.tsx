@@ -101,12 +101,10 @@ const Ui: React.SFC<IUiProps> = ({ as: Component, className, ...props }) => {
   let propClasses = [];
 
   Object.keys(props).forEach(key => {
-    if (allPropClasses.has(key)) {
-      if (!!props[key]) {
+    if (!allPropClasses.has(key)) {
+        passThroughProps[key] = props[key];
+    } else if (!!props[key]) {
         propClasses.push(key);
-      }
-    } else {
-      passThroughProps[key] = props[key];
     }
   });
 
