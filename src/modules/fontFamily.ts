@@ -1,0 +1,17 @@
+export default [
+  "sans-serif",
+  "serif",
+  "system-sans-serif",
+  "system-serif",
+  "code",
+  "courier",
+  "helvetica",
+  "avenir",
+  "athelas",
+  "georgia",
+  "times",
+  "bodoni",
+  "calisto",
+  "garamond",
+  "baskerville",
+];

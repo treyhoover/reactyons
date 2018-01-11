@@ -1,0 +1,18 @@
+export default [
+  "static",
+  "relative",
+  "absolute",
+  "fixed",
+  "static-ns",
+  "relative-ns",
+  "absolute-ns",
+  "fixed-ns",
+  "static-m",
+  "relative-m",
+  "absolute-m",
+  "fixed-m",
+  "static-l",
+  "relative-l",
+  "absolute-l",
+  "fixed-l",
+];

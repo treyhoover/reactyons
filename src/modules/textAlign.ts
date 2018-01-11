@@ -1,0 +1,18 @@
+export default [
+  "tl",
+  "tr",
+  "tc",
+  "tj",
+  "tl-ns",
+  "tr-ns",
+  "tc-ns",
+  "tj-ns",
+  "tl-m",
+  "tr-m",
+  "tc-m",
+  "tj-m",
+  "tl-l",
+  "tr-l",
+  "tc-l",
+  "tj-l",
+];

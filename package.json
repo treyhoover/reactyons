@@ -1,0 +1,49 @@
+{
+    "name": "reactyons",
+    "version": "0.0.2",
+    "description": "A library for quickly building react components with tachyons",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/treyhoover/reactyons.git"
+    },
+    "author": "Trey Hoover <trey.hoover@gmail.com>",
+    "license": "MIT",
+    "keywords": [
+        "reactyons",
+        "react",
+        "tachyons",
+        "react-tachyons",
+        "tachyons-react"
+    ],
+    "main": "build/reactyons",
+    "module": "build/reactyons",
+    "files": [
+        "build"
+    ],
+    "scripts": {
+        "build": "NODE_ENV=production rollup -c",
+        "watch": "rollup -cw"
+    },
+    "devDependencies": {
+        "rollup": "^0.50.0",
+        "rollup-plugin-commonjs": "^8.2.1",
+        "rollup-plugin-node-resolve": "^3.0.0",
+        "rollup-plugin-peer-deps-external": "^1.0.0",
+        "rollup-plugin-replace": "^2.0.0",
+        "rollup-plugin-typescript": "^0.8.1",
+        "rollup-plugin-uglify": "^2.0.1",
+        "rollup-watch": "^4.3.1",
+        "tslib": "^1.6.0",
+        "typescript": "^2.5.3"
+    },
+    "dependencies": {
+        "@types/react": "^16.0.10",
+        "@types/react-dom": "^16.0.1",
+        "classnames": "^2.2.5",
+        "rollup-plugin-local-resolve": "^1.0.7"
+    },
+    "peerDependencies": {
+        "react": "^16.0.0",
+        "react-dom": "^16.0.0"
+    }
+}

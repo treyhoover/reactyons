@@ -1,0 +1,18 @@
+export default [
+  "v-base",
+  "v-mid",
+  "v-top",
+  "v-btm",
+  "v-base-ns",
+  "v-mid-ns",
+  "v-top-ns",
+  "v-btm-ns",
+  "v-base-m",
+  "v-mid-m",
+  "v-top-m",
+  "v-btm-m",
+  "v-base-l",
+  "v-mid-l",
+  "v-top-l",
+  "v-btm-l",
+];
