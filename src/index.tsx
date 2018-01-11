@@ -1,10 +1,10 @@
 import * as React from "react";
-import classNames from "classnames";
 import allPropClasses from "./modules";
+import { isValidClassName } from "./utils";
 
 const Ui: React.SFC<IUiProps> = ({ as: Component, className, ...props }) => {
   let passThroughProps = {};
-  let propClasses = [];
+  let propClasses = [className];
 
   Object.keys(props).forEach(key => {
     if (!allPropClasses.has(key)) {
@@ -16,12 +16,13 @@ const Ui: React.SFC<IUiProps> = ({ as: Component, className, ...props }) => {
 
   return <Component
     {...passThroughProps}
-    className={classNames(className, ...propClasses)}
+    className={propClasses.filter(isValidClassName).join(" ")}
   />
 };
 
 Ui.defaultProps = {
-    as: "div"
+    as: "div",
+    className: "",
 };
 
 export interface IUiProps {
