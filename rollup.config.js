@@ -5,7 +5,6 @@ import babel from 'rollup-plugin-babel'
 import replace from 'rollup-plugin-replace';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import localResolve from "rollup-plugin-local-resolve";
-import pkg from './package.json';
 import uglify from 'rollup-plugin-uglify';
 
 const dev = 'development';
@@ -41,7 +40,10 @@ const config = {
     ],
     sourcemap: env === dev ? 'inline' : false,
     input: './src/index.tsx',
-    external: Object.keys(pkg.dependencies),
+    external: ['react'],
+    globals: {
+        react: "React",
+    },
     output: {
         file: './build/reactyons.js',
         format: "es",
