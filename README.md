@@ -20,4 +20,24 @@ class App extends React.Component {
 }
 ```
 
+You can also use the exported `withTachyons` HOC on any react component:
+
+```
+import React from "react";
+import { withTachyons } from "reactyons";
+import MyCustomButton from "./components/Button";
+import "tachyons/css/tachyons.css"; // or use a custom build
+
+const Button = withTachyons(MyCustomButton);
+
+class App extends React.Component {
+    render() {
+        return (
+            <Button mb2 mr2>I support tachyon props now!</Button>
+        );
+    }
+}
+
+```
+
 Check out the [Tachyons Docs](http://tachyons.io/docs/) for more.
