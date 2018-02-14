@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import tachyons from "../classNames";
 
 const isValidClassName = str => typeof str === "string" && str.length > 0;

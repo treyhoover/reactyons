@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { Header, Time, Small, H5, H4, H3, Span } from "reactyons"
 import Container from "./Container";
 import { primary } from "../theme/index";

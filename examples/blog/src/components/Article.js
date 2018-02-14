@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { Article } from "reactyons"
 import Header from "./Header";
 import Container from "./Container";

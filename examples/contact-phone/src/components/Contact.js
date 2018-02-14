@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { Ul, Li, Img, Div, Span, A } from "reactyons";
 
 const ContactList = props => (

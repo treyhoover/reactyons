@@ -15,6 +15,7 @@ const env = parseNodeEnv(process.env.NODE_ENV);
 const config = {
     name: "Tachyons",
     plugins: [
+        peerDepsExternal(),
         typescriptPlugin({
             // The current rollup-plugin-typescript includes an old version of typescript, so we import and pass our own version
             typescript,
@@ -24,7 +25,6 @@ const config = {
             // in proper format.
             importHelpers: true,
         }),
-        peerDepsExternal(),
         replace({
             // The react sources include a reference to process.env.NODE_ENV so we need to replace it here with the actual value
             'process.env.NODE_ENV': JSON.stringify(env),
@@ -40,14 +40,7 @@ const config = {
     ],
     sourcemap: env === dev ? 'inline' : false,
     input: './src/index.tsx',
-    external: ['react'],
-    globals: {
-        react: "React",
-    },
-    output: {
-        file: './build/reactyons.js',
-        format: "es",
-    },
+    external: ['react', 'react-dom'],
 };
 
 if (env === 'es' || env === 'cjs') {

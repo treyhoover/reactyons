@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { P } from "reactyons"
 
 export default props => (
