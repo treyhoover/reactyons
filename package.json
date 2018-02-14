@@ -1,6 +1,6 @@
 {
     "name": "reactyons",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "description": "A library for quickly building react components with tachyons",
     "repository": {
         "type": "git",
