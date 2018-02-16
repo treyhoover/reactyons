@@ -15,7 +15,7 @@
         "react-tachyons",
         "tachyons-react"
     ],
-    "main": "build/reactyons.js",
+    "main": "dist/reactyons.js",
     "module": "es/reactyons.js",
     "files": [
         "dist",
