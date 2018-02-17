@@ -4,10 +4,11 @@ import allTachyons from "../constants/classNames";
 const isValidClassName = str => typeof str === "string" && str.length > 0;
 
 export default (options: IOptions = {}) => (WrappedComponent) =>  {
-    const { overrides = {} } = options;
+    const { overrides = {}, map = {} } = options;
 
     const tachyons = {
         ...allTachyons,
+        ...map,
         ...overrides,
     };
 
@@ -20,7 +21,9 @@ export default (options: IOptions = {}) => (WrappedComponent) =>  {
                 if (!tachyons[key]) {
                     passThroughProps[key] = this.props[key];
                 } else if (Boolean(this.props[key])) {
-                    propClasses.push(key);
+                    const mapped = key in map ? map[key] : key;
+
+                    propClasses.push(mapped);
                 }
             });
 
@@ -33,6 +36,9 @@ export default (options: IOptions = {}) => (WrappedComponent) =>  {
 }
 
 interface IOptions {
+    map?: {
+        [key: string]: string;
+    },
     overrides?: {
         [key: string]: boolean;
     }
