@@ -29,7 +29,7 @@
         "build:umd": "cross-env BABEL_ENV=es NODE_ENV=development rollup -c -o dist/reactyons.js",
         "build:umd:min": "cross-env BABEL_ENV=es NODE_ENV=production rollup -c -o dist/reactyons.min.js",
         "build": "yarn build:commonjs && yarn build:es && yarn build:umd && yarn build:umd:min",
-        "watch": "rollup -cw",
+        "watch": "cross-env BABEL_ENV=es NODE_ENV=es rollup -cw -o es/reactyons.js",
         "prepublishOnly": "yarn build"
     },
     "devDependencies": {
