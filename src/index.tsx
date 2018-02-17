@@ -1,7 +1,8 @@
 import * as React from "react";
 import withTachyons from "./hoc/withTachyons";
+import withCustomTachyons from "./hoc/withCustomTachyons";
 
-export { withTachyons };
+export { withTachyons, withCustomTachyons };
 
 export const A = withTachyons(p => <a {...p} />);
 export const Abbr = withTachyons(p => <abbr {...p} />);
