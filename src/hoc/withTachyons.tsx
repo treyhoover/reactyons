@@ -23,6 +23,6 @@ export default (WrappedComponent) => class ComponentWithEventProps extends React
     }
 }
 
-interface IWrappedComponentProps extends HTMLElement<any> {
+interface IWrappedComponentProps extends React.HTMLAttributes<any> {
 
 }

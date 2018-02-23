@@ -44,6 +44,6 @@ interface IOptions {
     }
 }
 
-interface IWrappedComponentProps extends HTMLElement<any> {
+interface IWrappedComponentProps extends React.HTMLAttributes<any> {
 
 }
