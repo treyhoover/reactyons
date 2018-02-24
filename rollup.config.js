@@ -55,7 +55,7 @@ if (env === 'es' || env === 'cjs') {
 
 if (env === 'development' || env === 'production') {
     config.output = { format: 'umd' };
-    config.name = 'Redux';
+    config.name = 'Reactyons';
     config.plugins.push(
         nodeResolve({
             jsnext: true
