@@ -1,8 +1,7 @@
 import * as React from "react";
-import withTachyons from "./hoc/withTachyons";
-import withCustomTachyons from "./hoc/withCustomTachyons";
+import withTachyons, { ReactyonsProvider } from "./hoc/withTachyons";
 
-export { withTachyons, withCustomTachyons };
+export { ReactyonsProvider, withTachyons };
 
 export const A = withTachyons(p => <a {...p} />);
 export const Abbr = withTachyons(p => <abbr {...p} />);
@@ -68,7 +67,7 @@ export const Link = withTachyons(p => <link {...p} />);
 export const Main = withTachyons(p => <main {...p} />);
 export const Map = withTachyons(p => <map {...p} />);
 export const Mark = withTachyons(p => <mark {...p} />);
-export const Marquee = withTachyons(p => <marquee {...p} />);
+// export const Marquee = withTachyons(p => <marquee {...p} />);
 export const Menu = withTachyons(p => <menu {...p} />);
 export const Menuitem = withTachyons(p => <menuitem {...p} />);
 export const Meta = withTachyons(p => <meta {...p} />);
