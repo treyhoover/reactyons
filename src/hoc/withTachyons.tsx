@@ -27,37 +27,47 @@ export interface IReactyonsProviderProps {
     }
 }
 
-export default (WrappedComponent) => class ComponentWithEventProps extends React.Component<IWrappedComponentProps, any> {
+const withState = WrappedComponent => props => (
+    <ReactyonsContext.Consumer>
+        {tachyons => <WrappedComponent tachyons={tachyons} {...props} />}
+    </ReactyonsContext.Consumer>
+);
+
+export default (WrappedComponent) => withState(class ComponentWithEventProps extends React.PureComponent<IWrappedComponentProps, any> {
+    constructor(props) {
+        super(props);
+
+        const val = props.tachyons;
+        const hasOptions = Boolean(val) && typeof val === "object";
+        const options = hasOptions ? val : {};
+        const tachyons = Object.assign({}, defaultTachyons, options);
+
+        this.state = {
+            tachyons,
+        };
+    }
+
     render() {
+        const { tachyons } = this.state;
+        let passThroughProps = {};
+        let propClasses = [this.props.className];
+
+        Object.keys(this.props).forEach(key => {
+            if (!tachyons[key]) {
+                passThroughProps[key] = this.props[key];
+            } else if (Boolean(this.props[key])) {
+                propClasses.push(key);
+            }
+        });
+
         return (
-            <ReactyonsContext.Consumer>
-                {val => {
-                    const hasOptions = Boolean(val) && typeof val === "object";
-                    const options = hasOptions ? val : {};
-                    const tachyons = Object.assign({}, defaultTachyons, options);
-
-                    let passThroughProps = {};
-                    let propClasses = [this.props.className];
-
-                    Object.keys(this.props).forEach(key => {
-                        if (!tachyons[key]) {
-                            passThroughProps[key] = this.props[key];
-                        } else if (Boolean(this.props[key])) {
-                            propClasses.push(key);
-                        }
-                    });
-
-                    return (
-                        <WrappedComponent
-                            {...passThroughProps}
-                            className={propClasses.filter(isValidClassName).join(" ")}
-                        />
-                    );
-                }}
-            </ReactyonsContext.Consumer>
+            <WrappedComponent
+                {...passThroughProps}
+                className={propClasses.filter(isValidClassName).join(" ")}
+            />
         );
     }
-}
+})
 
 interface IWrappedComponentProps extends React.HTMLAttributes<any> {
 
