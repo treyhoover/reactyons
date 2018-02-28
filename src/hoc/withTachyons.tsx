@@ -49,13 +49,15 @@ export default (WrappedComponent) => withState(class ComponentWithEventProps ext
 
     render() {
         const { tachyons } = this.state;
-        let passThroughProps = {};
-        let propClasses = [this.props.className];
+        const { className, tachyons: _, ...props } = this.props;
 
-        Object.keys(this.props).forEach(key => {
+        let passThroughProps = {};
+        let propClasses = [className];
+
+        Object.keys(props).forEach(key => {
             if (!tachyons[key]) {
-                passThroughProps[key] = this.props[key];
-            } else if (Boolean(this.props[key])) {
+                passThroughProps[key] = props[key];
+            } else if (Boolean(props[key])) {
                 propClasses.push(key);
             }
         });
@@ -70,5 +72,5 @@ export default (WrappedComponent) => withState(class ComponentWithEventProps ext
 })
 
 interface IWrappedComponentProps extends React.HTMLAttributes<any> {
-
+    tachyons: any;
 }
